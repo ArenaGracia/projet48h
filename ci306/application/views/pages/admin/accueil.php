@@ -1,0 +1,1 @@
+<div class="text-center"><a class="small" style="color: #01703E;" href="<?php echo site_url('login/deconnectAdmin'); ?>">Se deconnecter</a></div>
