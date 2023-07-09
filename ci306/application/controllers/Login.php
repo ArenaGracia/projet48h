@@ -19,13 +19,24 @@ class Login extends CI_Controller {
 		$this->load->view('pages/loginAdmin',$data);
 	}
 
+    public function insertUser() {
+        $this->load->model('User_models');
+        $this->load->helper('email_helper');
+        $nom = $this->input->post('nom');
+        $prenom = $this->input->post('prenom');
+        $email = $this->input->post('email');
+        $mdp = $this->input->post('pwd');
+        $this->User_models->insertUser($nom, $prenom, $email, $mdp);   
+        redirect("login/index");    
+    }
+
     public function verify_user()
 	{
-        $this->load->model('Login_models');
+        $this->load->model('User_models');
         $this->load->helper('email_helper');
 		$email=$this->input->post('email');
 		$pwd=$this->input->post('pwd');
-        $result=$this->Login_models->verify_Login($email,$pwd);
+        $result=$this->User_models->verify_Login($email,$pwd);
 
         if(valid_email($email) && $result!=null){
             $this->session->set_userdata('user', $result);
