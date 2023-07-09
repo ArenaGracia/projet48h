@@ -12,8 +12,8 @@
         <div class="text-center">
             <h4 class="text-dark mb-4">Login</h4>
         </div>
-        <form action="<?php echo site_url('login/verify'); ?>" method="post">
-            <div class="mb-3"><input class="form-control form-control-user" type="email"  name="email" value="etu1976@gmail.com"></div>
+        <form action="<?php echo site_url('login/verify_user'); ?>" method="post">
+            <div class="mb-3"><input class="form-control form-control-user" type="email"  name="email" value="arena1976@gmail.com"></div>
             <div class="mb-3"><input class="form-control form-control-user" type="password" name="pwd" value="arena"></div>
             <div class="mb-3">
                 <div class="custom-control custom-checkbox small"></div>
