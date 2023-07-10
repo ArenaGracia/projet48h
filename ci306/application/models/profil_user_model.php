@@ -29,9 +29,4 @@ class profil_user_model extends CI_Model {
         $sql = sprintf("UPDATE regime SET nom='%s' where id_regime = %s ",$new,$id);
         $query = $this->db->query($sql);
     }
-    
-    public function deleteRegime($id){
-        $sql = sprintf("UPDATE regime SET etat = 10 where id_regime = %s",$id);
-        $query = $this->db->query($sql);
-    }
 }

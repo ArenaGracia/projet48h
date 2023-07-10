@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['Subscription'] = 'Subscription_user';
+
+$route['export-pdf'] = 'PdfController/exportToPdf';
