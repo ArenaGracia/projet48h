@@ -48,5 +48,18 @@ class crud_regime_model extends CI_Model {
         $result = $query->row_array();
         return $result;
     }
+
+    public function getAlimentFromRegime($idRegime) {
+
+        $result = array();
+        $query = $this->db->query("select a.nom, a.prix from aliment a
+            join regime_aliment ra on ra.id_aliment = a.id_aliment
+            join regime r on r.id_regime = ra.id_regime
+            where r.id_regime = " .$idRegime);
+        foreach($query->result_array() as $row){
+            $result[] = $row;
+        }
+        return $result;
+    }
 }
 ?>
