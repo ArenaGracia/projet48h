@@ -13,7 +13,7 @@ class crud_activite_model extends CI_Model {
     }
 
     public function saveActivite($nom){
-        $sql = sprintf("INSERT INTO activite values(null,'%s')",$nom);
+        $sql = sprintf("INSERT INTO activite values(null, '%s', 1)",$nom);
         $query = $this->db->query($sql);
     }
 
