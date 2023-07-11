@@ -16,14 +16,14 @@ class WelcomeUser extends CI_Controller {
         $this->load->view('pages/user/accueil');
 	}
 
-<<<<<<< Updated upstream
 	public function monnaie(){
 		$this->load->model("User_models");
 		$this->load->model("Type_model");
 		$user->$this->session->userdate('user');
-		$data['monnaie']=$this->User_models->getMonnaie();
-		$result['type'] = $this->Type_model->getAllType();
-=======
+		$data['monnaie']=$this->User_models->getMonnaie($user['id_user']);
+        $this->load->view('pages/user/accueil',$data);
+	}
+
 	public function ajouterCode()
 	{
 		$user=$this->session->userdata('user');
@@ -33,7 +33,6 @@ class WelcomeUser extends CI_Controller {
 		$data['code']=$this->Code_models->getListeCode();
 		$data['result']=$this->Code_models->insert_Validate($valeur,$user['id_user']);
 		$this->load->view("pages/admin/listeCode",$data);
->>>>>>> Stashed changes
 	}
 }
 ?>
