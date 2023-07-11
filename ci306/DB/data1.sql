@@ -10,6 +10,13 @@ CREATE TABLE user(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO user VALUES(null,'Arena','Gracia','arena1976@gmail.com','arena');
 
+CREATE TABLE sante(
+    id_user INT,
+    taille DOUBLE PRECISION,
+    poids DOUBLE PRECISION,
+    FOREIGN KEY (id_user) REFERENCES user(id_user)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE admin(
     id_admin INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(40),
@@ -39,7 +46,7 @@ CREATE  TABLE porte_monnaie (
     FOREIGN KEY (id_user) REFERENCES user(id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+INSERT INTO porte_monnaie VALUES(1,200000);
 
 INSERT INTO code( prix, code, etat ) VALUES ( 25000.0, "111111111111111", 1);
 INSERT INTO code( prix, code, etat ) VALUES ( 50000.0, "222222222222222", 1);
