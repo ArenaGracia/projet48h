@@ -22,11 +22,7 @@ class profilUser extends CI_Controller {
 
     public function getProfilByUser($id_user){
         $data['profil'] = $this->User_models->getUserById($id_user);
-        $this->load->view('pages/user/profil', $data);
-    }
-
-	public function getProfil($id_user){
         $data['user'] = $this->Profil_user_model->getProfilByUser($id_user);
         $this->load->view('pages/user/profil', $data);
-    }	
+    }
 }

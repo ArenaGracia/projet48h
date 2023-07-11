@@ -23,8 +23,8 @@
 
   <!-- FAVICONS ICON -->
   <link rel="shortcut icon" type="image/png" href=" <?php echo site_url('assets/images/favicon.png') ?>" />
-  <link href="<?php //echo site_url('assets/vendor/jquery-nice-select/css/nice-select.css') ?>" rel="stylesheet">
-  <link href="<?php //echo site_url('assets/css/style.css') ?>" rel="stylesheet">
+  <link href="<?php echo site_url('assets/vendor/jquery-nice-select/css/nice-select.css') ?>" rel="stylesheet">
+  <link href="<?php echo site_url('assets/css/style.css') ?>" rel="stylesheet">
 
 </head>
 
@@ -235,11 +235,11 @@
                       <div class="text-center">
                         <div class="row">
                           <div class="col">
-                            <h3 class="m-b-0"><?php// echo $user['genre'] ?></h3>
+                            <h3 class="m-b-0"><?php echo $user['genre'] ?></h3>
                             <h4>genre</h4>
                           </div>
                           <div class="col">
-                            <h3 class="m-b-0"><?php //echo $user['poids'] ?></h3>
+                            <h3 class="m-b-0"><?php echo $user['poids'] ?></h3>
                             <h4>poids <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#modifyPoids">
                                 <i class="bi bi-pen"></i>
@@ -275,7 +275,7 @@
 
                           </div>
                           <div class="col">
-                            <h3 class="m-b-0"><?php// echo $user['taille'] ?></h3>
+                            <h3 class="m-b-0"><?php echo $user['taille'] ?></h3>
                             <h4>taille <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#modifyTaille">
                                 <i class="bi bi-pen"></i>
@@ -401,10 +401,10 @@
         Scripts
     ***********************************-->
   <!-- Required vendors -->
-  <script src="../../assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="../../assets/vendor/global/global.min.js"></script>
-  <script src="../../assets/js/custom.js"></script>
-  <script src="../../assets/js/dlabnav-init.js"></script>
-  <script src="../../assets/js/demo.js"></script>
-  <script src="../../assets/js/styleSwitcher.js"></script>
+  <script src=" <?php echo site_url('assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js') ?>"></script>
+  <script src=" <?php echo site_url('assets/vendor/global/global.min.js') ?>"></script>
+  <script src="<?php echo site_url('assets/js/custom.js') ?>"></script>
+  <script src="<?php echo site_url('assets/js/dlabnav-init.js') ?>"></script>
+  <script src="<?php echo site_url('assets/js/demo.js') ?>"></script>
+  <script src="<?php echo site_url('assets/js/styleSwitcher.js') ?>"></script>
 </body>
