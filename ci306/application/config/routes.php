@@ -56,3 +56,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Subscription'] = 'Subscription_user';
 
 $route['export-pdf'] = 'PdfController/exportToPdf';
+
+$route['profil/(:num)'] = 'profilUser/getProfilByUser/$1';
+// $route['profil/(:num)'] = 'profilUser/getProfil/$1';

@@ -13,7 +13,7 @@ class profil_user_model extends CI_Model {
     }
 
     public function getProfilByUser($id_user){
-        $sql = $this->db->query('SELECT * FROM profil_user where id_user = '.$id_user);
+        $sql = 'SELECT * FROM profil_user where id_user = '.$id_user;
         $query = $this->db->query($sql);
         $result = $query->row_array();
         return $result;
