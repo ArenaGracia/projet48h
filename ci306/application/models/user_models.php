@@ -9,6 +9,11 @@ class user_models extends CI_Model {
         $query = $this->db->query($requette);
     }
 
+    public function saveProfil($id_user, $genre, $taille, $poids){
+        $sql = sprintf("INSERT INTO profil_user values(%u,'%s', %u, %u)",$id_user, $genre, $taille, $poids);
+        $query = $this->db->query($sql);
+    }
+
     public function verify_Login($email,$mdp){
         $sql="SELECT*FROM user WHERE email=%s AND mdp=%s";
         $sql=sprintf($sql,$this->db->escape($email),$this->db->escape($mdp));

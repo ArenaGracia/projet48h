@@ -29,4 +29,6 @@ class profil_user_model extends CI_Model {
         $sql = sprintf("UPDATE regime SET nom='%s' where id_regime = %s ",$new,$id);
         $query = $this->db->query($sql);
     }
+
+   
 }

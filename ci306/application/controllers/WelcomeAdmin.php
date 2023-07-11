@@ -16,12 +16,7 @@ class WelcomeAdmin extends CI_Controller {
         $this->load->view('pages/admin/accueil',$data);
 	}
 
-	public function listeCode(){
-		$this->load->model("Code_models");
-		$data['code']=$this->Code_models->getListeCode();
-		$data['tete']="Code";
-		$this->load->view("pages/admin/listeCode",$data);
-	}
+	
 
 	public function listeActivite(){
 		$this->load->model("Activite_models");
