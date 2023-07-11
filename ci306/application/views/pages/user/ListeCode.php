@@ -41,6 +41,13 @@
                                                 <tr>
                                                     <td><?php echo $code[$i]['code'] ?></td>
                                                     <td><?php echo number_format($code[$i]['prix'],0,',',' ') ?> Ar</td>   
+                                                    <?php if ($code[$i]['etat']==5 || $code[$i]['etat']==1 ) { ?>
+                                                        <td><span class="badge badge-success">Encore disponnible</span></td>
+                                                    <?php } ?>
+
+                                                    <?php if ($code[$i]['etat']==10) { ?>
+                                                        <td><span class="badge badge-light">Plus disponnible</span></td>
+                                                    <?php } ?>
                                                 </tr>                                                
                                             <?php } ?>
                                         </tbody>
