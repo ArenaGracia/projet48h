@@ -91,5 +91,13 @@ class WelcomeAdmin extends CI_Controller {
 		$data['valide']=$this->Code_models->getListeValide();
 		$this->load->view("pages/admin/Avalider",$data);
 	}
+
+	public function valider(){
+		$this->load->model("Code_models");
+		$id_code = $this->input->post('id_code');
+		$id_user = $this->input->post('id_user');
+		$this->Code_models->validate_code($id_code,$id_user);
+		redirect('welcomeAdmin/toValidate');
+	}
 }
 ?>

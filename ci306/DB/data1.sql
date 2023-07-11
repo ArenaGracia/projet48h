@@ -4,22 +4,15 @@ INSERT INTO user VALUES (null,'Arena','Gracia','arena1976@gmail.com','arena');
 INSERT INTO user VALUES (null,'Benjamina', 'RAMAROSON', 'ramarosonbenjamina@gmail.com', 'mdpprom15');
 INSERT INTO user VALUES (null,'Judi', 'HERINIRINA', 'judi1968@gmail.com', 'judi');
 
-INSERT INTO type VALUES (null, 'Augmenter son poids');
-INSERT INTO type VALUES (null, 'Reduire son poids');
-INSERT INTO type VALUES (null, 'Atteindre son IMC idéal');
-
-INSERT INTO type_aliment VALUES(null,"Petit-Dejeuuner");
-INSERT INTO type_aliment VALUES(null,"Dejeuner");
-INSERT INTO type_aliment VALUES(null,"Diner");
-
-INSERT INTO aliment VALUES ( null,'Viande',1, 10000.0, 1);
-INSERT INTO aliment VALUES ( null,'Lait',2, 5000.0, 1);
-
 INSERT INTO activite VALUES (null, 'Squats',1);
 INSERT INTO activite VALUES (null, 'Deadlifts',1);
 INSERT INTO activite VALUES (null, 'Flexion',1);
 INSERT INTO activite VALUES (null, 'Faire une marche',1);
 INSERT INTO activite VALUES (null, 'Faire du sport collectif',1);
+
+INSERT INTO post_valide VALUES(1,1);
+INSERT INTO post_valide VALUES(1,2);
+UPDATE code SET etat=5 WHERE id_code=5;
 
 INSERT INTO code( prix, code, etat ) VALUES ( 25000.0, "111111111111111", 1);
 INSERT INTO code( prix, code, etat ) VALUES ( 50000.0, "222222222222222", 1);

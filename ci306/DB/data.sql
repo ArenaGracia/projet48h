@@ -19,7 +19,6 @@ CREATE  TABLE aliment (
 	id_aliment           INT  NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
 	nom                  VARCHAR(40)  NOT NULL     ,
 	prix                 DOUBLE  NOT NULL     ,
-	photo                VARCHAR(50)  NOT NULL     ,
 	etat                 INT  NOT NULL   
  );
 

@@ -38,7 +38,7 @@ CREATE  TABLE code (
     etat    INT  NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE  TABLE postValide (
+CREATE  TABLE post_valide (
     id_code    INT,
     id_user    INT,
     FOREIGN KEY (id_code) REFERENCES code(id_code),
@@ -51,3 +51,41 @@ CREATE  TABLE porte_monnaie (
     FOREIGN KEY (id_user) REFERENCES user(id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO porte_monnaie VALUES(1,200000);
+
+CREATE  TABLE aliment ( 
+	id_aliment INT  NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+	nom    VARCHAR(40)  NOT NULL,
+	prix   DOUBLE PRECISION  NOT NULL,
+	etat   INT  NOT NULL   
+ );
+
+CREATE  TABLE regime ( 
+	id_regime  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nom VARCHAR(50) NOT NULL,
+	etat INT NOT NULL   
+ );
+
+CREATE  TABLE regime_activite ( 
+	id_regime   INT  NOT NUL,
+	id_activite INT  NOT NUL,
+	FOREIGN KEY ( id_activite ) REFERENCES activite( id_activite ) ,
+	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) 
+ );
+
+CREATE  TABLE regime_aliment ( 
+	id_regime INT  NOT NULL,
+	id_aliment INT  NOT NULL,
+	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) ,
+	FOREIGN KEY ( id_aliment ) REFERENCES aliment( id_aliment ) 
+ );
+
+CREATE  TABLE regime_effet ( 
+	id_regime INT  NOT NULL,
+	effet DOUBLE PRECISION NOT NULL,
+	FOREIGN KEY (id_regime) REFERENCES regime(id_regime) 
+ );
+
+CREATE TABLE type( 
+	id_type INT  NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+	nom  VARCHAR(40) NOT NULL     
+);
