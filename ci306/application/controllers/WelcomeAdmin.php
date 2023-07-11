@@ -23,6 +23,13 @@ class WelcomeAdmin extends CI_Controller {
 		$this->load->view("pages/admin/listeCode",$data);
 	}
 
+	public function listeActivite(){
+		$this->load->model("Activite_models");
+		$data['activite']=$this->Activite_models->getListeActivite();
+		$data['tete']="Activité sportive";
+		$this->load->view("pages/admin/listeActivite",$data);
+	}
+
 	public function creerCode(){
 		$this->load->model("Code_models");
 		$num = $this->input->post('code');
@@ -31,10 +38,31 @@ class WelcomeAdmin extends CI_Controller {
 		redirect("welcomeAdmin/listeCode");
 	}
 
+	public function creerActivite(){
+		$this->load->model("Activite_models");
+		$num = $this->input->post('activite');
+        $this->Activite_models->insert_Activite($num, $valeur); 
+		redirect("welcomeAdmin/listeActivite");
+	}
+
+	public function modifierActivite(){
+		$this->load->model("Activite_models");
+		$id = $this->input->post('id_activite');
+		$valeur = $this->input->post('activite');
+        $this->Activite_models->update_Activite($valeur, $id); 
+		redirect("welcomeAdmin/listeActivite");
+	}
+
     public function createCode()
 	{
 		$data['tete']="Code";
         $this->load->view('pages/admin/Create_monnaie',$data);
+	}
+
+    public function createActivite()
+	{
+		$data['tete']="Activité sportif";
+        $this->load->view('pages/admin/create_sportif',$data);
 	}
 
 	public function toValidate(){

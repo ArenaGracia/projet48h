@@ -17,6 +17,17 @@ CREATE TABLE sante(
     FOREIGN KEY (id_user) REFERENCES user(id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE  TABLE activite ( 
+	id_activite INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	activite VARCHAR(100)  NOT NULL,
+    
+);
+INSERT INTO activite VALUES (null, 'Squats');
+INSERT INTO activite VALUES (null, 'Deadlifts');
+INSERT INTO activite VALUES (null, 'Flexion');
+INSERT INTO activite VALUES (null, 'Faire une marche');
+INSERT INTO activite VALUES (null, 'Faire du sport collectif');
+
 CREATE TABLE admin(
     id_admin INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(40),

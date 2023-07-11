@@ -139,8 +139,8 @@
                             <span class="nav-text">Activite sportive</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="index.html">Creer un autre</a></li>
-                            <li><a href="instructors.html">Lister</a></li>
+                            <li><a href="<?php echo site_url('welcomeAdmin/createActivite') ?>">Creer un autre</a></li>
+                            <li><a href="<?php echo site_url('welcomeAdmin/listeActivite') ?>">Lister</a></li>
                         </ul>
                     </li>
 
