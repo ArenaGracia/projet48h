@@ -10,6 +10,8 @@ INSERT INTO activite VALUES (null, 'Flexion',1);
 INSERT INTO activite VALUES (null, 'Faire une marche',1);
 INSERT INTO activite VALUES (null, 'Faire du sport collectif',1);
 
+INSERT INTO porte_monnaie VALUES(1,200000);
+
 INSERT INTO post_valide VALUES(1,1);
 INSERT INTO post_valide VALUES(1,2);
 UPDATE code SET etat=5 WHERE id_code=5;

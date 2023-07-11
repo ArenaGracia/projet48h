@@ -50,7 +50,6 @@ CREATE  TABLE porte_monnaie (
     argent   DOUBLE PRECISION,
     FOREIGN KEY (id_user) REFERENCES user(id_user)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO porte_monnaie VALUES(1,200000);
 
 CREATE  TABLE aliment ( 
 	id_aliment INT  NOT NULL AUTO_INCREMENT  PRIMARY KEY,
@@ -68,15 +67,15 @@ CREATE  TABLE regime (
 CREATE  TABLE regime_activite ( 
 	id_regime   INT  NOT NUL,
 	id_activite INT  NOT NUL,
-	FOREIGN KEY ( id_activite ) REFERENCES activite( id_activite ) ,
-	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) 
+	FOREIGN KEY (id_activite) REFERENCES activite(id_activite) ,
+	FOREIGN KEY (id_regime) REFERENCES regime(id_regime) 
  );
 
 CREATE  TABLE regime_aliment ( 
 	id_regime INT  NOT NULL,
 	id_aliment INT  NOT NULL,
-	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) ,
-	FOREIGN KEY ( id_aliment ) REFERENCES aliment( id_aliment ) 
+	FOREIGN KEY (id_regime) REFERENCES regime(id_regime) ,
+	FOREIGN KEY (id_aliment) REFERENCES aliment(id_aliment) 
  );
 
 CREATE  TABLE regime_effet ( 
