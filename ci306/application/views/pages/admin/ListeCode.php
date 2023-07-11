@@ -23,7 +23,7 @@
                                             <?php for ($i=0; $i <count($code) ; $i++) { ?>
                                                 <tr>
                                                     <td><?php echo $code[$i]['code'] ?></td>
-                                                    <td><?php echo $code[$i]['prix'] ?></td>
+                                                    <td><?php echo number_format($code[$i]['prix'],0,',',' ') ?></td>
                                                     
                                                     <?php if ($code[$i]['etat']==5 || $code[$i]['etat']==1 ) { ?>
                                                         <td><span class="badge badge-success">Encore disponnible</span></td>

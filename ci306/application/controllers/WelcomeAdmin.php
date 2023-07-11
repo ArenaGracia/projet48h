@@ -30,6 +30,13 @@ class WelcomeAdmin extends CI_Controller {
 		$this->load->view("pages/admin/listeActivite",$data);
 	}
 
+	public function listeAliment(){
+		$this->load->model("Aliment_models");
+		$data['aliment']=$this->Aliment_models->getAllAliment();
+		$data['tete']="Aliments";
+		$this->load->view("pages/admin/listeAliment",$data);
+	}
+
 	public function creerCode(){
 		$this->load->model("Code_models");
 		$num = $this->input->post('code');
@@ -41,11 +48,24 @@ class WelcomeAdmin extends CI_Controller {
 	public function creerActivite(){
 		$this->load->model("Activite_models");
 		$num = $this->input->post('activite');
-        $this->Activite_models->insert_Activite($num, $valeur); 
+        $this->Activite_models->insert_Activite($num); 
 		redirect("welcomeAdmin/listeActivite");
 	}
 
-	public function modifierActivite(){
+	public function updateActivite($id=''){
+		$this->load->model("Activite_models");
+		$data['tete']="Modifier Sport";
+        $data['sport']=$this->Activite_models->getActivite($id); 
+		$this->load->view("pages/admin/modif_sportif",$data);
+	}
+
+	public function deleteActivite($id=''){
+		$this->load->model("Activite_models");
+        $this->Activite_models->delete_Activite($id); 
+		redirect("welcomeAdmin/listeActivite");
+	}
+
+	public function modifierActivite($valeur=''){
 		$this->load->model("Activite_models");
 		$id = $this->input->post('id_activite');
 		$valeur = $this->input->post('activite');

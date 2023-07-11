@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class profil_user_model extends CI_Model {
+class   Profil_models extends CI_Model {
 
     public function getAllProfil(){
         $result = array();

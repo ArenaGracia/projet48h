@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Tout les listes des aliments</h4>
+                                <h4 class="card-title">Tout les listes des activités</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -19,9 +19,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php for($i=0;$i<count($sport);$i++) { ?>
+                                            
+                                            <?php for($i=0;$i<count($activite);$i++) { ?>
                                                 <tr>
-                                                    <td>Krossy</td>
+                                                    <td><?php echo $activite[$i]['activite'] ?></td>
                                                     <td>
                                                         <div class="dropdown">
                                                             <button type="button" class="btn btn-warning light sharp"
@@ -39,9 +40,9 @@
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="./update_sportif.html">Modifier</a>
+                                                                    href="<?php echo site_url("welcomeAdmin/updateActivite/".$activite[$i]['id_activite']) ?>">Modifier</a>
                                                                 <a class="dropdown-item"
-                                                                    href="./delete_sportif.html">Supprimer</a>
+                                                                    href="<?php echo site_url("welcomeAdmin/deleteActivite/".$activite[$i]['id_activite']) ?>">Supprimer</a>
                                                             </div>
                                                         </div>
                                                     </td>

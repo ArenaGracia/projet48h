@@ -1,63 +1,25 @@
-CREATE DATABASE projet;
-USE projet;
-
-CREATE TABLE user(
-    id_user INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(40),
-    prenom VARCHAR(40),
-    email VARCHAR(40),
-    mdp VARCHAR(40)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO user VALUES(null,'Arena','Gracia','arena1976@gmail.com','arena');
-
-CREATE TABLE sante(
-    id_user INT,
-    taille DOUBLE PRECISION,
-    poids DOUBLE PRECISION,
-    FOREIGN KEY (id_user) REFERENCES user(id_user)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE  TABLE activite ( 
-	id_activite INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	activite VARCHAR(100)  NOT NULL,
-    
-);
-INSERT INTO activite VALUES (null, 'Squats');
-INSERT INTO activite VALUES (null, 'Deadlifts');
-INSERT INTO activite VALUES (null, 'Flexion');
-INSERT INTO activite VALUES (null, 'Faire une marche');
-INSERT INTO activite VALUES (null, 'Faire du sport collectif');
-
-CREATE TABLE admin(
-    id_admin INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(40),
-    prenom VARCHAR(40),
-    email VARCHAR(40),
-    mdp VARCHAR(40)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO admin VALUES(null,'RABENANAHARY','Rojo','rojo@gmail.com','rojo');
 
-CREATE  TABLE code (
-    id_code INT  NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
-    prix    DOUBLE PRECISION NOT NULL,
-    code    VARCHAR(20)  NOT NULL,
-    etat    INT  NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO user VALUES (null,'Arena','Gracia','arena1976@gmail.com','arena');
+INSERT INTO user VALUES (null,'Benjamina', 'RAMAROSON', 'ramarosonbenjamina@gmail.com', 'mdpprom15');
+INSERT INTO user VALUES (null,'Judi', 'HERINIRINA', 'judi1968@gmail.com', 'judi');
 
-CREATE  TABLE postValide (
-    id_code    INT,
-    id_user    INT,
-    FOREIGN KEY (id_code) REFERENCES code(id_code),
-    FOREIGN KEY (id_user) REFERENCES user(id_user)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO type VALUES (null, 'Augmenter son poids');
+INSERT INTO type VALUES (null, 'Reduire son poids');
+INSERT INTO type VALUES (null, 'Atteindre son IMC idéal');
 
-CREATE  TABLE porte_monnaie (
-    id_user   INT,
-    argent   DOUBLE PRECISION,
-    FOREIGN KEY (id_user) REFERENCES user(id_user)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO type_aliment VALUES(null,"Petit-Dejeuuner");
+INSERT INTO type_aliment VALUES(null,"Dejeuner");
+INSERT INTO type_aliment VALUES(null,"Diner");
 
-INSERT INTO porte_monnaie VALUES(1,200000);
+INSERT INTO aliment VALUES ( null,'Viande',1, 10000.0, 1);
+INSERT INTO aliment VALUES ( null,'Lait',2, 5000.0, 1);
+
+INSERT INTO activite VALUES (null, 'Squats',1);
+INSERT INTO activite VALUES (null, 'Deadlifts',1);
+INSERT INTO activite VALUES (null, 'Flexion',1);
+INSERT INTO activite VALUES (null, 'Faire une marche',1);
+INSERT INTO activite VALUES (null, 'Faire du sport collectif',1);
 
 INSERT INTO code( prix, code, etat ) VALUES ( 25000.0, "111111111111111", 1);
 INSERT INTO code( prix, code, etat ) VALUES ( 50000.0, "222222222222222", 1);
