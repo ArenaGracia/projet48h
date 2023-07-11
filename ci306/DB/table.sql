@@ -65,8 +65,8 @@ CREATE  TABLE regime (
  );
 
 CREATE  TABLE regime_activite ( 
-	id_regime   INT  NOT NUL,
-	id_activite INT  NOT NUL,
+	id_regime   INT  NOT NULL,
+	id_activite INT  NOT NULL,
 	FOREIGN KEY (id_activite) REFERENCES activite(id_activite) ,
 	FOREIGN KEY (id_regime) REFERENCES regime(id_regime) 
  );
@@ -88,3 +88,26 @@ CREATE TABLE type(
 	id_type INT  NOT NULL AUTO_INCREMENT  PRIMARY KEY,
 	nom  VARCHAR(40) NOT NULL     
 );
+
+CREATE  TABLE profil_user ( 
+	id_user  INT NOT NULL,
+	genre  VARCHAR(25) NOT NULL ,
+	taille DOUBLE PRECISION  NOT NULL,
+	poids DOUBLE PRECISION  NOT NULL,
+	FOREIGN KEY (id_user) REFERENCES user(id_user)
+);
+
+CREATE  TABLE user_regime ( 
+	id_user_regime       INT  NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
+	id_user              INT  NOT NULL     ,
+	id_regime            INT  NOT NULL     ,
+	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) ,
+	FOREIGN KEY ( id_user ) REFERENCES user( id_user ) 
+);
+
+ CREATE  TABLE type_regime ( 
+	id_type   INT  NOT NULL,
+	id_regime INT  NOT NULL,
+	FOREIGN KEY ( id_regime ) REFERENCES regime( id_regime ) ,
+	FOREIGN KEY ( id_type ) REFERENCES type( id_type )
+ );

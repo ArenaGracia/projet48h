@@ -34,20 +34,20 @@
         }
 
         public function insert_Validate($valeur,$id_user){
-            $code=$this->Code_models->getCode(valeur);
+            $code=$this->Code_models->getCode($valeur);
             $result='';
-            if (code==5 || code==1) {
+            if ($code['etat']==5 || $code['etat']==1) {
                 $result="Demande envoyée";
                 $sql="INSERT INTO post_valide VALUES(%d,%d)";
                 $sql=sprintf($sql,$code['id_code'],$id_user);
 
                 $sql1="UPDATE code SET etat=5 WHERE id_code=%d";
-                $sql1=sprintf($sql1,$id_code);
+                $sql1=sprintf($sql1,$code['id_code']);
 
                 $query=$this->db->query($sql);
                 $query2=$this->db->query($sql1);
             }
-            if (code==10) {
+            if ($code['etat']==10) {
                 $result="Ce code n'est plus disponible";
             }
             return $result;            

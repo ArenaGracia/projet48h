@@ -28,6 +28,7 @@ class User_models extends CI_Model {
         $sql=sprintf($sql,$id);
         $query=$this->db->query($sql);
         $result=$query->row_array();
+        return $result;
     }
 
     public function getUserById($id_user){

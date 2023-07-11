@@ -16,15 +16,25 @@
                                 </div>
                                     <div class="card-body">
                                     <div class="basic-form">
+                                        <?php if (isset($monnaie)) { ?>
+                                            <h3><label>Votre argent est de <?php echo number_format($monnaie['SUM(argent)'],0,',',' ') ?> Ar</label></h3>
+                                        <?php  } ?>
+
                                         <form action="<?php echo site_url('WelcomeUser/AjouterCode') ?>" method="post">
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
                                             <label class="form-label">Entrer le code</label>
-                                            <input type="number" class="form-control" placeholder="" name="credit_code">
+                                            <input type="number" class="form-control" placeholder="" name="code">
                                             </div>
                                         </div>
+
+                                        <?php if (isset($result)) { ?>
+                                            <p><label><?php echo $result ?></label></p>
+                                        <?php  } ?>
                                         <button type="submit" class="btn btn-primary">Acheter</button>
+
                                         </form>
+                                        
                                     </div>
                                     </div>
                                 </div>
@@ -52,8 +62,6 @@
                 </div>
             </div>
         </div>
-
-    </div>
 
 <?php $this->load->view("pages/templates/footerAdmin") ?>
 
