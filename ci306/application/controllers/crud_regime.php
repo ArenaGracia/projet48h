@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Code_journaux extends CI_Controller {
+class Crud_regime extends CI_Controller {
 
     public function insertRegime() {
-        $this->load->model('crud_regime_model');
+        $this->load->model('Crud_regime_model');
         $nom = $this->input->post('nom');
         $this->crud_regime_model->saveRegime($nom);   
         redirect("");    
@@ -25,5 +25,14 @@ class Code_journaux extends CI_Controller {
 
     public function selectAll() {
         $compte = $this->crud_regime_model->getAllRegime();
+    }
+
+    public function getRegimeActivite() {
+        $this->load->model('Crud_regime_model');
+        $type = $this->input->get('type');
+        $effet = $this->input->get('effet');
+        
+        $code['proposition'] = $this->Crud_regime_model->getRegimeAndActivite($type, $effet);
+        $this->load->view('pages/user/proposition',$code);
     }
 }

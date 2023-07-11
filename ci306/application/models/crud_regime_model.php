@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class crud_regime_model extends CI_Model {
+class Crud_regime_model extends CI_Model {
 
     public function getAllRegime(){
         $result = array();
@@ -29,8 +29,7 @@ class crud_regime_model extends CI_Model {
     }
 
     public function getRegimeAndActivite($idType, $effet) {
-        $result = array();
-        $query = $this->db->query("SELECT r.id_regime, r.nom, a.activite, al.nom, al.prix*re.effet prix_total, re.effet nbr_semaine FROM regime r
+        $query = $this->db->query("SELECT r.id_regime, r.nom, a.activite, al.nom nom_aliment, al.prix*re.effet prix_total, re.effet nbr_semaine FROM regime r
         JOIN type_regime tr ON r.id_regime = tr.id_regime
         JOIN type t ON t.id_type = tr.id_type
         JOIN regime_effet re ON re.id_regime = r.id_regime
@@ -46,9 +45,7 @@ class crud_regime_model extends CI_Model {
             LIMIT 1
         ))");
         
-        foreach($query->result_array() as $row){
-            $result[] = $row;
-        }
+        $result=$query->result_array();
         return $result;
     }
 
