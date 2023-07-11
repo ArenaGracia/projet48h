@@ -22,7 +22,7 @@
   <title>Html</title>
 
   <!-- FAVICONS ICON -->
-  <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="<?php echo site_url("assets/images/favicon.png")?>" />
   <link href="<?php echo site_url('assets/vendor/jquery-nice-select/css/nice-select.css') ?>" rel="stylesheet">
   <link href="<?php echo site_url('assets/css/style.css') ?>" rel="stylesheet">
 
@@ -127,7 +127,7 @@
     <div class="dlabnav">
       <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
-          <li class="mm-active"><a href="./../Accueil.html" aria-expanded="true">
+          <li class="mm-active"><a href="<?php echo site_url('welcomeUser/index') ?>" aria-expanded="true">
               <i class="bi bi-house"></i>
               <span class="nav-text">Accueil</span>
             </a>

@@ -16,19 +16,28 @@ class WelcomeUser extends CI_Controller {
         $this->load->view('pages/user/accueil');
 	}
 
-	public function listeCode(){
+	public function ajouterCode()
+	{
+		$user=$this->session->userdata('user');
 		$this->load->model("Code_models");
+		$this->load->model("User_models");
+
+		$valeur = $this->input->post('code');
+
 		$data['code']=$this->Code_models->getListeCode();
-		$data['tete']="Code";
+		$data['result']=$this->Code_models->insert_Validate($valeur,$user['id_user']);
+		$data['monnaie']=$this->User_models->getMonnaie($user['id_user']);
 		$this->load->view("pages/user/listeCode",$data);
 	}
 
-	public function monnaie(){
+	public function listeCode(){
+		$this->load->model("Code_models");
 		$this->load->model("User_models");
-		$this->load->model("Type_model");
-		$user->$this->session->userdate('user');
-		$data['monnaie']=$this->User_models->getMonnaie();
-		$result['type'] = $this->Type_model->getAllType();
+		$user=$this->session->userdata('user');
+		$data['code']=$this->Code_models->getListeCode();
+		$data['monnaie']=$this->User_models->getMonnaie($user['id_user']);
+		$this->load->view("pages/user/listeCode",$data);
 	}
+
 }
 ?>

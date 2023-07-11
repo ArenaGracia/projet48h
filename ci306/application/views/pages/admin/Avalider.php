@@ -20,14 +20,23 @@
                                                     <th><strong>Code</strong></th>
                                                     <th><strong>Crédit</strong></th>
                                                     <th><strong>Utilisateur</strong></th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php for ($i=0; $i <count($valide) ; $i++) { ?>
                                                     <tr>
                                                         <td><?php echo $valide[$i]['code'] ?></td>
-                                                        <td><?php echo $valide[$i]['prix'] ?></td>
-                                                        <td><?php echo $valide[$i]['user'] ?></td>                                        
+                                                        <td><?php echo number_format($valide[$i]['prix'],0,',',' ') ?> Ar</td>                                        
+                                                        <td><?php echo $valide[$i]['nom'] ?></td>
+
+                                                        <td>
+                                                            <form action="<?php echo site_url("welcomeAdmin/valider") ?>" method="post">
+                                                                <input type="hidden" name="id_code" value="<?php echo $valide[$i]['id_code'] ?>">
+                                                                <input type="hidden" name="id_user" value="<?php echo $valide[$i]['id_user'] ?>">
+                                                                <input type="submit" class="btn btn-success" value="Valider">
+                                                            </form>
+                                                        </td>
                                                     </tr>                                                
                                                 <?php } ?>
                                             </tbody>

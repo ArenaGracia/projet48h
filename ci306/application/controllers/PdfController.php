@@ -6,7 +6,6 @@ require_once APPPATH.'third_party/fpdf17/fpdf.php';
 class PdfController extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        $this->load->library('session');
     }
 
     public function exportToPdf() {
