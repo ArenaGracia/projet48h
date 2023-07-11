@@ -13,8 +13,13 @@ class WelcomeUser extends CI_Controller {
     public function index()
 	{	
 		$user=$this->session->userdata('user');
-		echo $user['nom'];
         $this->load->view('pages/user/accueil');
+	}
+
+	public function monnaie(){
+		$this->load->model("User_models");
+		$user->$this->session->userdate('user');
+		$data['monnaie']=$this->User_models->getMonnaie();
 	}
 }
 ?>

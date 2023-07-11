@@ -17,5 +17,13 @@ class user_models extends CI_Model {
         echo $sql;
         return $result;
     }
+
+    public function getMonnaie($id){
+        $sql="SELECT SUM(argent) from porte_monnaie WHERE id_user=%d";
+        $sql=sprintf($sql,$id);
+        $query=$this->db->query($sql);
+        $result=$query->row_array();
+        return $result;
+    }
 }
 ?>
