@@ -172,11 +172,6 @@ WHERE t.id_type = 1
 ))
 
 
-select effet semaine, a.nom, a.prix, effet*a.prix prix_total from regime_effet re
-join regime r on r.id_regime = re.id_regime
-join regime_aliment ra on ra.id_regime = r.id_regime
-join aliment a on a.id_aliment = ra.id_aliment
-
 
 
 select r.id_regime, r.nom from regime r

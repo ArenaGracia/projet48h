@@ -18,8 +18,10 @@ class WelcomeUser extends CI_Controller {
 
 	public function monnaie(){
 		$this->load->model("User_models");
+		$this->load->model("Type_model");
 		$user->$this->session->userdate('user');
 		$data['monnaie']=$this->User_models->getMonnaie();
+		$result['type'] = $this->Type_model->getAllType();
 	}
 }
 ?>
