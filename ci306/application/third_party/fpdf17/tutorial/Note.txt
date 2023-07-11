@@ -1,0 +1,8 @@
+INF401;Base de donnees d'entreprises;6;11;P
+INF402;Structure de donnees avancees;3;11;P
+INF403;Programmation web avance;6;12;AB
+INF404;Interface graphique client lourd;3;8;
+INF405;Design Pattern;6;10;P
+INF406;Programmation distribuee et Web services;3;11;P
+INF407;Recherche operationnelle;3;8;
+;SEMESTRE 1;30;10.45;P

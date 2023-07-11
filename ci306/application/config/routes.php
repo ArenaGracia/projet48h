@@ -52,3 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['Subscription'] = 'Subscription_user';
+
+$route['export-pdf'] = 'PdfController/exportToPdf';
+
+$route['profil/(:num)'] = 'profilUser/getProfilByUser/$1';
+// $route['profil/(:num)'] = 'profilUser/getProfil/$1';

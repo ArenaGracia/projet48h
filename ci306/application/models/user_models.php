@@ -23,6 +23,12 @@ class user_models extends CI_Model {
         $sql=sprintf($sql,$id);
         $query=$this->db->query($sql);
         $result=$query->row_array();
+    }
+    
+    public function getUserById($id_user){
+        $sql = "SELECT * FROM user where id_user = ".$id_user;
+        $query = $this->db->query($sql);
+        $result = $query->row_array();
         return $result;
     }
 }
